@@ -2,7 +2,7 @@
 
 ## Instructions
 
-The goal of this exercise is to create a demo RESTful application using Ruby&Rails.
+The goal of this exercise is to create a demo RESTful API (JSON only) using Ruby&Rails.
 
 ### The Task
 
@@ -14,15 +14,16 @@ In this task, we are building the backend of an application that helps us managi
 
 We need to offer a RESTful CRUD for all the information above.
 
-#### Notes:
-
-1. Make sure to provide a tutorial on how to run your application
-2. Feel free to use any database
-
 #### Bonus points:
 
 1. If you add automated tests
 2. If you provide a Docker image
+
+#### Notes:
+
+1. Make sure to provide a tutorial on how to run your application
+2. Feel free to use any database
+3. Scaffold for tests and controllers aren't allowed, but it's encouraged for models
 
 ## F.A.Q.
 
