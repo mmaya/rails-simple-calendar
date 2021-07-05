@@ -24,6 +24,26 @@ In this task we are building a single month view of a calendar for the current m
 3. Feel free to use any database
 4. Scaffold for tests and controllers *aren't* allowed, but it's encouraged for models
 
+## Evaluation
+| Functionality     |                                                                | Possible Points |
+|-------------------|----------------------------------------------------------------|-----------------|
+|                   | Matches the proposed requirements                              |              20 |
+|                   | Implements REST correctly                                      |              15 |
+|                   | Separation of layers (Model, View, Controller).                |              15 |
+|                   | Controllers tests                                              |              10 |
+|                   | Models tests                                                   |              10 |
+|                   | Input validations                                              |               5 |
+|                   | Standard HTTP error codes                                      |               5 |
+| **Code Quality**  |                                                                |                 |
+|                   | Code formatting, readability, maintainability, etc             |               5 |
+|                   | Folders and packages structure                                 |               5 |
+| **DevOps**        |                                                                |                 |
+|                   | Docker image to build/run the project                          |               5 |
+| **Documentation** |                                                                |                 |
+|                   | Documentation about the work done, how to run the project, etc |               5 |
+| **Total**         |                                                                |             100 |
+
+
 ### Bonus Points:
 1. If you deploy the application in any server and share the link with us
 2. If provide thoughts on what you could improve on your code given more time and incentives
