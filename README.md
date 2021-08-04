@@ -30,7 +30,7 @@ In this task we are building a single month view of a calendar for the current m
 |                   | Matches the proposed requirements                              |              20 |
 |                   | Implements REST correctly                                      |              15 |
 |                   | Separation of layers (Model, View, Controller).                |              15 |
-|                   | Controllers tests                                              |              10 |
+|                   | Feature tests (it can be controller, services, requests, etc.) |              10 |
 |                   | Models tests                                                   |              10 |
 |                   | Input validations                                              |               5 |
 |                   | Standard HTTP error codes                                      |               5 |
