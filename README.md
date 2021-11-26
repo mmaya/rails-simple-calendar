@@ -1,6 +1,6 @@
 ## Instructions
 
-The goal of this exercise is to create both the backend and frontned of a calendar application using Ruby on Rails.
+The goal of this exercise is to create both the backend and frontend of a calendar application using Ruby on Rails.
 
 ### The Task
 
