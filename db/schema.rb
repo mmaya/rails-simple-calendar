@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2021_12_18_144808) do
   enable_extension "plpgsql"
 
   create_table "reminders", force: :cascade do |t|
-    t.string "name"
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
     t.string "description", limit: 30, null: false
