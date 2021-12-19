@@ -1,5 +1,5 @@
-<div id="calendar">
-
+<%= javascript_pack_tag 'reminders'%>
+<div>
   <div id="header" class="header">
     <%= link_to calendar.url_for_previous_view do %>
       <div id="left" class="left"></div>
@@ -17,15 +17,39 @@
       <div class="week">
         <% week.each do |day| %>
           <%= content_tag :div, class: calendar.td_classes_for(day) do %>
-            <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+            <div onClick="showReminders(<%= day.day %>,'<%= day.to_s.parameterize %>')">
               <div class="day-name"><%= t('date.abbr_day_names')[day.wday] %></div>
-              <div class="day-number"><% capture_haml(day.day, sorted_events.fetch(day, []), &passed_block) %></div>
-            <% else %>
-              <div class="day-name"><%= t('date.abbr_day_names')[day.wday] %></div>
-              <div class="day-number"><% passed_block.call day.day, sorted_events.fetch(day, []) %></div>
-            <% end %>
+              <div class="day-number"><% passed_block.call day.day %></div>
+              <div class="day-reminders">
+                <% @reminders.each do |reminder| %>
+                  <% if reminder.start_time.day == day.day %>
+                    <span style="background: <%= reminder.color || '#fff' %>;"></span>
+                  <% end %>    
+                <% end %>
+              </div>
+            </div>
           <% end %>
         <% end %>
+        <% week.each_with_index do |day, index| %>
+          <div class="details" id="detail-<%= day.to_s.parameterize %>" style="display: none;">
+            <div class="arrow" style="left: <%= 32 + index*62 %>px"></div>
+            <% @reminders.each do |reminder| %>
+              <div class="reminders">
+                <div class="reminder">
+                  <% if reminder.start_time.day == day.day %>
+                    <div class="reminder-category" style="background: <%= reminder.color || '#fff' %>;"></div>
+                    <span><%= reminder.start_time.strftime('%H:%M') %> - <%= reminder.end_time.strftime('%H:%M') %></span>
+                    <span><%= reminder.description %></span>    
+                  <% else %>    
+                    <span>No reminders</span>
+                  <% end %>    
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
       </div>
-    <% end %>
   </div>
+</div>
+
