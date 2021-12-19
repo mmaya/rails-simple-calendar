@@ -1,9 +1,3 @@
-<%= month_calendar reminders: reminders do |date, reminders| %>
+<%= month_calendar reminders: reminders, previous_link: reminders_ajax_previous_link, next_link: reminders_ajax_next_link do |date, reminders| %>
   <%= date %>
-
-  <% reminders.each do |reminder| %>
-    <div>
-      <%= reminder.description %>
-    </div>
-  <% end %>
 <% end %>
