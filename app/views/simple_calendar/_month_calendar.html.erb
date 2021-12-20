@@ -1,4 +1,6 @@
 <%= javascript_pack_tag 'reminders'%>
+
+
 <div>
   <div id="header" class="header">
     <%= link_to calendar.url_for_previous_view do %>
@@ -13,43 +15,29 @@
   </div>
 
   <div class="month new">
-    <% date_range.each_slice(7) do |week| %>
+    <% date_range.each_slice(7).with_index do |week, week_index| %>
       <div class="week">
-        <% week.each do |day| %>
+        <% week.each_with_index do |day, day_index| %>
+          <%= puts  @reminders.to_json %>
+<%= puts  day.to_date %>
+<%= puts  @reminders[day.to_date] %>
           <%= content_tag :div, class: calendar.td_classes_for(day) do %>
-            <div onClick="showReminders(<%= day.day %>,'<%= day.to_s.parameterize %>')">
+            <div onClick="showReminders(<%= day_index %>, <%= week_index %>, <%= @reminders[day.to_date].to_json %>)" >
               <div class="day-name"><%= t('date.abbr_day_names')[day.wday] %></div>
-              <div class="day-number"><% passed_block.call day.day %></div>
+              <div class="day-number" id="day-<%= day.day %>"><% passed_block.call day.day %></div>
               <div class="day-reminders">
-                <% @reminders.each do |reminder| %>
-                  <% if reminder.start_time.day == day.day %>
-                    <span style="background: <%= reminder.color || '#fff' %>;"></span>
-                  <% end %>    
+                <% if @reminders[day.to_date] %>
+                  <% @reminders[day.to_date].each do |reminder| %> 
+                      <span style="background: <%= reminder.color || '#fff' %>;"></span> 
+                  <% end %>   
                 <% end %>
               </div>
             </div>
           <% end %>
         <% end %>
-        <% week.each_with_index do |day, index| %>
-          <div class="details" id="detail-<%= day.to_s.parameterize %>" style="display: none;">
-            <div class="arrow" style="left: <%= 32 + index*62 %>px"></div>
-            <% @reminders.each do |reminder| %>
-              <div class="reminders">
-                <div class="reminder">
-                  <% if reminder.start_time.day == day.day %>
-                    <div class="reminder-category" style="background: <%= reminder.color || '#fff' %>;"></div>
-                    <span><%= reminder.start_time.strftime('%H:%M') %> - <%= reminder.end_time.strftime('%H:%M') %></span>
-                    <span><%= reminder.description %></span>    
-                  <% else %>    
-                    <span>No reminders</span>
-                  <% end %>    
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+          <div id="anchor-<%= week_index %>"></div>
       <% end %>
-      </div>
+    </div>
   </div>
 </div>
 

@@ -10,25 +10,15 @@
         "/packs/js/application-3dd0dc24d9c39bc09227.js.map"
       ]
     },
-    "reminders-old": {
-      "js": [
-        "/packs/js/reminders-old-ba0df96a5d0ce0ab985c.js"
-      ],
-      "js.map": [
-        "/packs/js/reminders-old-ba0df96a5d0ce0ab985c.js.map"
-      ]
-    },
     "reminders": {
       "js": [
-        "/packs/js/reminders-efe8e37cbf50973ea987.js"
+        "/packs/js/reminders-19a33275f717286316d0.js"
       ],
       "js.map": [
-        "/packs/js/reminders-efe8e37cbf50973ea987.js.map"
+        "/packs/js/reminders-19a33275f717286316d0.js.map"
       ]
     }
   },
-  "reminders-old.js": "/packs/js/reminders-old-ba0df96a5d0ce0ab985c.js",
-  "reminders-old.js.map": "/packs/js/reminders-old-ba0df96a5d0ce0ab985c.js.map",
-  "reminders.js": "/packs/js/reminders-efe8e37cbf50973ea987.js",
-  "reminders.js.map": "/packs/js/reminders-efe8e37cbf50973ea987.js.map"
+  "reminders.js": "/packs/js/reminders-19a33275f717286316d0.js",
+  "reminders.js.map": "/packs/js/reminders-19a33275f717286316d0.js.map"
 }

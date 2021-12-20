@@ -1,0 +1,32 @@
+<%= form_for(@reminder, local: false) do |f| %>
+  <h3>Create a new reminder</h3>
+  <% if @reminder.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@reminder.errors.count, "error") %> prohibited this reminder from being saved:</h3>
+
+      <ul>
+      <% @reminder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p id="notice"><%= notice %></p>
+
+  
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  
+  
+    <%= f.label :start_time %><br>
+    <%= f.datetime_local_field :start_time %>
+
+    <%= f.label :start_time %><br>
+    <%= f.datetime_local_field :end_time %>
+    
+    <%= f.label :color %><br>
+    <%= f.color_field :color %>
+  
+    <%= f.submit %>
+  
+<% end %>
