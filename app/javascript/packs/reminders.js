@@ -27,7 +27,10 @@ window.showReminders = function(day_index, week_index, reminders) {
 
       div.appendChild(square);
       div.appendChild(span);
-      details.appendChild(div);
+      link = createElement('a')
+      link.href = reminder.url
+      link.appendChild(div)
+      details.appendChild(link);
     })
   }else {
     var div = createElement('div', 'reminder empty');

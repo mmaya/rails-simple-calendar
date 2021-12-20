@@ -9,6 +9,19 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new
   end
 
+  # GET /reminders/1
+  def show
+  end
+
+  # GET /reminders/new
+  def new
+    @reminder = Reminder.new
+  end
+
+  # GET /reminders/1/edit
+  def edit
+  end
+
   # POST /reminders
   def create
     @reminders = Reminder.all.group_by { |reminder| reminder.start_time.to_date }
@@ -20,6 +33,25 @@ class RemindersController < ApplicationController
       else
         format.html {	render :index }
       end
+    end
+  end
+
+  # PATCH/PUT /reminders/1
+  def update
+    respond_to do |format|
+      if @reminder.update(reminder_params[:reminder])
+        format.html { redirect_to @reminder, notice: 'Reminder was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  # DELETE /reminders/1
+  def destroy
+    @reminder.destroy
+    respond_to do |format|
+      format.html { redirect_to reminders_url, notice: 'Reminder was successfully destroyed.' }
     end
   end
 
