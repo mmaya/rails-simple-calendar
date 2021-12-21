@@ -61,3 +61,36 @@ To deliver the exercise, you should clone this repository and work on a new bran
 
 ### Will I have access to the evaluation?
 By default we only send the result, however you can feel free to request the full evaluation and we will share it with you as well as the final score.
+
+## Tutorial on how to run the application
+
+### Prerequisites
+The setups steps expect following tools installed on the system.
+
+Git
+Ruby 2.7.2
+Rails 6.1.4
+PostgreSQL 12.6
+
+### Setup
+
+1. Check out the repository
+git clone https://gitlab.com/codelittinc/rails-interview-project-milleni-maya.git
+
+2. Create database.yml file
+Copy the sample database.yml file and edit the database configuration as required.
+cp config/database.yml.sample config/database.yml
+
+3. Create and setup the database
+Run the following commands to create and setup the database.
+rake db:create
+rake db:migrate
+
+4. Start the Rails server
+You can start the rails server using the command given below.
+
+rails s
+And now you can visit the site with the URL http://localhost:3000
+
+### Deployed example on Heroku
+

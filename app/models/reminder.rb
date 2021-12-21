@@ -5,8 +5,8 @@ class Reminder < ApplicationRecord
   validates :description, length: {  maximum: 30, too_long: "%{count} characters is the maximum allowed for descriptions" }
   validates :color, format: { with: /\A#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})\z/, message: "Not a valid color, please try again" }, allow_blank: true
   validate :start_time_cannot_be_in_the_past,:end_time_cannot_be_before_start_time
-  # Only validates with it's changed
-  validate :cannot_exist_conflicting_reminders, on: :update, if: :start_time_changed? or :start_time_changed?
+  
+  
 
   def as_json(options={})
     super(
@@ -21,17 +21,8 @@ class Reminder < ApplicationRecord
   end
 
   def end_time_cannot_be_before_start_time
-    if start_time.present? && end_time.present? && end_time < start_time
+    if start_time.present? && end_time.present? && end_time < start_time 
       errors.add(:end_time, "can't be before start time")
     end
-  end
-
-  def cannot_exist_conflicting_reminders
-    if start_time.present? && end_time.present? 
-      # To do: list de conflicts on the error message
-      if Reminder.where(["end_time > ? and start_time < ? and end_time >= ?", DateTime.current.beginning_of_day, end_time, start_time]).exists?
-        errors.add(:start_time, "conflicts with another reminder")
-      end
-    end  
   end
 end

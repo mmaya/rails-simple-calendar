@@ -29,7 +29,8 @@ class RemindersController < ApplicationController
   
     respond_to do |format|
       if @reminder.save
-        format.html { redirect_to request.referrer, notice: "User was successfully WHATEVER." }
+        flash[:notice] = "Reminder was successfully created"
+        format.html { redirect_to :reminders }
       else
         format.html {	render :index }
       end
