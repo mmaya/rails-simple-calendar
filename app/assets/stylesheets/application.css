@@ -14,4 +14,5 @@
  *= require_self
  *= require calendar
  *= require new_reminder_form
+ *= require show_reminder
  */

@@ -68,8 +68,8 @@ By default we only send the result, however you can feel free to request the ful
 The setups steps expect following tools installed on the system.
 
 Git
-Ruby 2.7.2
-Rails 6.1.4
+Ruby 3.0.3
+Rails 7.0.0
 PostgreSQL 12.6
 
 ### Setup
@@ -93,4 +93,8 @@ rails s
 And now you can visit the site with the URL http://localhost:3000
 
 ### Deployed example on Heroku
+
+### Tests
+Execute bundle exec rspec
+
 

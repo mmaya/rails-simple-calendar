@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Reminder</h1>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @reminder.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @reminder.description %>
+  </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @reminder.start_time %>
-</p>
+  <p>
+    <strong>Start time:</strong>
+    <%= @reminder.start_time.strftime('%F - %H:%M') %>
+  </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @reminder.start_time %>
-</p>
+  <p>
+    <strong>End time:</strong>
+    <%= @reminder.end_time.strftime('%F - %H:%M') %>
+  </p>
 
-<p>
-  <strong>Color:</strong>
-  <span style="background: <%= @reminder.color || '#fff' %>;"></span> 
-</p>
+  <p>
+    <strong>Color:</strong>
+    <spam class="reminder-category" style="background: <%= @reminder.color || '#fff' %>;"></span> 
+  </p>
 
-<%= link_to 'Edit', edit_reminder_path(@reminder) %> |
-<%= link_to 'Back', reminders_path %>
+  <%= link_to 'Edit', edit_reminder_path(@reminder) %> |
+  <%= link_to 'Back', reminders_path %>
+</div>

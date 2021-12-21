@@ -7,7 +7,7 @@ class Reminder < ApplicationRecord
   validate :start_time_cannot_be_in_the_past,:end_time_cannot_be_before_start_time
   
   
-
+  # Json serializer to simplify javascript front-end
   def as_json(options={})
     super(
       :except => [:id, :created_at, :updated_at]

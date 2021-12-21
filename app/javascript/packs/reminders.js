@@ -41,24 +41,12 @@ window.showReminders = function(day_index, week_index, reminders) {
   }
 }
 
-window.addEventListener("load", () => {
-  const element = document.querySelector("#new_reminder");
-  element.addEventListener("ajax:success", (reminder) => {
-    const [_data, _status, xhr] = reminder.detail;
-    element.insertAdjacentHTML("beforeend", xhr.responseText);
-  });
-  element.addEventListener("ajax:error", () => {
-    element.insertAdjacentHTML("beforeend", "<p>ERROR</p>");
-  });
-});
-
 function createElement(tagName, className, innerText, style) {
   var ele = document.createElement(tagName);
   if(className) {
     ele.className = className;
   }
   if(style) {
-    console.log(style);
     ele.style = style;
   }
   if(innerText) {
