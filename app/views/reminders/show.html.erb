@@ -23,5 +23,6 @@
   </p>
 
   <%= link_to 'Edit', edit_reminder_path(@reminder) %> |
-  <%= link_to 'Back', reminders_path %>
+  <%= link_to 'Back', reminders_path %> |
+  <%= link_to "Destroy", reminder_path(@reminder), method: :delete, data: { confirm: "You sure?" } %>
 </div>

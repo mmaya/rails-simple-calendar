@@ -93,8 +93,42 @@ rails s
 And now you can visit the site with the URL http://localhost:3000
 
 ### Deployed example on Heroku
+https://interview-milleni-maya.herokuapp.com/
 
 ### Tests
 Execute bundle exec rspec
 
+### Improvement opportunities
+1. Better UX for show, edit and delete reminders
+2. Front-end tests
+3. Implement the calendar without the simple calendar gem
 
+### Inspirations
+Design inspired by: https://codepen.io/peanav/pen/ulkof
+
+## Documentation
+
+### Goal
+Single month view of a calendar (default current month) that allows the user to view, create, edit and delete reminders (max 30 chars) for a user-entered day and time.
+
+### Acceptance criterias
+1. [required] The reminder accepts a maximum of 30 characters
+2. [required] The reminder must have a user-entered day and time
+3. [optional] The user may select a color for the reminder
+4. Show the current month by default with the reminders
+5. Allow the user to choose any month other than the current month
+6. Allow the user to create, delete or edit reminders
+7. Properly handle overflow when multiple reminders appear on the same date.
+8. Display reminders on the calendar view in the correct time order
+
+### Assumptions
+1. The user cannot create past date and time reminders
+2. The reminder must have a user-entered start and end time
+3. The reminder can start and end on different days as long as the start time has not passed
+4. The description can't be nil or ""
+5. End time can't be before start time
+
+### Design choices due to restricted time and effort
+1. No user control;
+2. Simple color picker;
+3. Use simple calendar gem. Simple Calendar is a well-maintained gem the does most of the work: https://github.com/excid3/simple_calendar
