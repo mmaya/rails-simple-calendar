@@ -1,0 +1,6 @@
+<div id="calendar" >
+  <%= render partial: "calendar", locals: {reminders: @reminders} %>
+</div>
+<div id="new_reminder" >
+  <%= render partial: "form", locals: {reminder: @reminder, notice: @notice} %>
+</div>

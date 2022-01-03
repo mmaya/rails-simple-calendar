@@ -1,0 +1,6 @@
+# Ignore all logfiles and tempfiles.
+/log/
+/tmp/
+/public/packs/js/
+/node_modules/
+/public/packs-test/

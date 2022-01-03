@@ -1,0 +1,38 @@
+<%= javascript_pack_tag 'reminders'%>
+<div>
+  <div id="header" class="header">
+    <%= link_to calendar.url_for_previous_view do %>
+      <div id="left" class="left"></div>
+    <% end %>
+    <h1>
+      <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+    </h1>
+    <%= link_to calendar.url_for_next_view do %>
+      <div id="right" class="right"></div>
+    <% end %>
+  </div>
+
+  <div class="month new">
+    <% date_range.each_slice(7).with_index do |week, week_index| %>
+      <div class="week">
+        <% week.each_with_index do |day, day_index| %>
+          <%= content_tag :div, class: calendar.td_classes_for(day) do %>
+            <div onClick="showReminders(<%= day_index %>, <%= week_index %>, <%= @reminders[day.to_date].to_json %>)" >
+              <div class="day-name"><%= t('date.abbr_day_names')[day.wday] %></div>
+              <div class="day-number" id="day-<%= day.day %>"><% passed_block.call day.day %></div>
+              <div class="day-reminders">
+                <% if @reminders[day.to_date] %>
+                  <% @reminders[day.to_date].each do |reminder| %> 
+                      <span style="background: <%= reminder.color || '#fff' %>;"></span> 
+                  <% end %>   
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+          <div id="anchor-<%= week_index %>"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

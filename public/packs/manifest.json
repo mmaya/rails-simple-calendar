@@ -1,0 +1,24 @@
+{
+  "application.js": "/packs/js/application-3dd0dc24d9c39bc09227.js",
+  "application.js.map": "/packs/js/application-3dd0dc24d9c39bc09227.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-3dd0dc24d9c39bc09227.js"
+      ],
+      "js.map": [
+        "/packs/js/application-3dd0dc24d9c39bc09227.js.map"
+      ]
+    },
+    "reminders": {
+      "js": [
+        "/packs/js/reminders-84ee35a4ada1c608a3e7.js"
+      ],
+      "js.map": [
+        "/packs/js/reminders-84ee35a4ada1c608a3e7.js.map"
+      ]
+    }
+  },
+  "reminders.js": "/packs/js/reminders-84ee35a4ada1c608a3e7.js",
+  "reminders.js.map": "/packs/js/reminders-84ee35a4ada1c608a3e7.js.map"
+}

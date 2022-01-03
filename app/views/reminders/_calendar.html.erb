@@ -1,0 +1,4 @@
+<p id="notice"><%= notice %></p>
+<%= month_calendar reminders: reminders, previous_link: reminders_ajax_previous_link, next_link: reminders_ajax_next_link do |date, reminders| %>
+  <%= date %>
+<% end %>
